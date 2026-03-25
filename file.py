@@ -87,6 +87,29 @@ def webpage(temp, hum, occ):
                 p {
                     color: #000066;
                     }
+     
+            .alert {
+              padding: 20px;
+              background-color: #f44336; /* Red */
+              color: white;
+              margin-bottom: 15px;
+            }
+
+
+            .closebtn {
+              margin-left: 15px;
+              color: white;
+              font-weight: bold;
+              float: right;
+              font-size: 22px;
+              line-height: 20px;
+              cursor: pointer;
+              transition: 0.3s;
+            }
+
+            .closebtn:hover {
+            color: black;
+            }
 </style>
 </head>
 <body>
@@ -109,7 +132,13 @@ def webpage(temp, hum, occ):
                 <button class="vbutton"> <a href=""> Turn on HVAC </a> </button>
                 
 <a href="#head">Go to Home</a>
+<div class="alert">
+if(temp > 45)
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  Temperature alert: excessive heat
 </div>
+</div>
+
 </body>
 </html>
      
