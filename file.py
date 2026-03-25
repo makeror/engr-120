@@ -62,7 +62,9 @@ def webpage(temp, hum, occ):
             <head>
                 <meta http-equiv'"refresh" content="2">
             <style>
-                .vbutton {
+.page { display: none; }
+.page:target { display: block; }
+.vbutton {
                     background-color: #000066;
                     color: white;
                     font-size: 15px;
@@ -76,24 +78,41 @@ def webpage(temp, hum, occ):
                     background-color: powderblue;
                     color: #000066;
                     }
-                body {
+                    body {
                     background-color: #e6e6e6;
                     color: white;
-                    font-family: verdana;
+                    font-family: helvetica;
                     font-size: 70%;
                     }
                 p {
                     color: #000066;
                     }
-            </style>
-            </head>
-            <body>
-                <p style="text-align:center;"> Temperature: {temp} </p>
+</style>
+</head>
+<body>
+<ul>
+<button class= "vbutton"><a href="#page1">Residents</a></button>
+<button class= "vbutton"><a href="#page2">Maintenance Staff</a></button>
+</ul>
+
+<div id="page1" class="page">
+<h1>Residents</h1>
+<p>                <p style="text-align:center;"> Occupancy Status: {occ} </p>
+<a href="#head">Go to Home</a>
+</div>
+
+<div id="page2" class="page">
+<h1>Maintenance Staff</h1>
+<p> <p style="text-align:center;"> Temperature: {temp} </p>
                 <p style="text-align:center;"> Humidity: {hum} </p>
                 <p style="text-align:center;"> Occupancy Status: {occ} </p>
                 <button class="vbutton"> <a href=""> Turn on HVAC </a> </button>
-            </body>
-            </html>
+                
+<a href="#head">Go to Home</a>
+</div>
+</body>
+</html>
+     
             """
     return str(html) 	#return webpage as string
 
