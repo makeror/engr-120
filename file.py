@@ -122,21 +122,34 @@ def webpage(temp, hum, occ):
 <h1>Residents</h1>
 <p>                <p style="text-align:center;"> Occupancy Status: {occ} </p>
 <a href="#head">Go to Home</a>
-</div>
 
-<div id="page2" class="page">
-<h1>Maintenance Staff</h1>
-<p> <p style="text-align:center;"> Temperature: {temp} </p>
-                <p style="text-align:center;"> Humidity: {hum} </p>
-                <p style="text-align:center;"> Occupancy Status: {occ} </p>
-                <button class="vbutton"> <a href=""> Turn on HVAC </a> </button>
-                
-<a href="#head">Go to Home</a>
-<div class="alert">
-if(temp > 45)
+	<div class="alert">
+ 
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  Temperature alert: excessive heat
-</div>
+  
+  <style>
+  #alert p {
+  display: none;
+}
+
+#alert .toohot {
+  display: Temperature alert: excessive heat
+}
+</style>
+	</div>
+   
+
+<script>
+	const tempalert = new alert().temp();
+
+	if (temp > 40 ) {
+ 	 document.getElementById('alert').classList.add('toohot');
+	} else  {
+	  document.getElementById('alert').classList.add('p');
+	}
+</script>
+
+
 </div>
 
 </body>
